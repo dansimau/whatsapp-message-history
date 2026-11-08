@@ -1,0 +1,37 @@
+{
+  "name": "whatsapp-message-history",
+  "version": "0.1.0",
+  "description": "Standalone WhatsApp message archiver (Baileys linked device) with SQLite full-text search, driven entirely over MCP.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "whatsapp-message-history": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "dev": "tsx src/index.ts serve",
+    "start": "node dist/index.js serve",
+    "stdio": "node dist/index.js stdio",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "@whiskeysockets/baileys": "^7.0.0-rc14",
+    "better-sqlite3": "^13.0.3",
+    "pino": "^10.4.0",
+    "qrcode": "^1.5.4",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^26.6.6",
+    "@types/qrcode": "^1.5.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
